@@ -37,7 +37,10 @@
 
 * **Day 1: 데이터 파이프라인 구축**
 * `yfinance`를 활용한 다중 종목(AAPL, MSFT, ^GSPC 등) 데이터 수집 및 전처리 자동화.
-* **Day 2:** EDA & 데이터 전처리 (결측치, 이상치 탐지) *(Coming Soon)*
+* **Day 2: EDA & 데이터 전처리 (Preprocessing)**
+    * `src/eda.py` 작성: 결측치(NaN) 처리 및 데이터 정규화(Forward Fill).
+    * **시각화:** 이중축 차트(Dual Axis)를 활용하여 삼성전자 vs S&P500 가격 추세 비교.
+    * **상관관계 분석:** 일별 수익률(Daily Return) 기반의 히트맵(Heatmap)으로 자산 간 연관성 검증.
 * **Day 3:** 기술적 지표 분석 (MA, RSI, Bollinger Bands) *(Coming Soon)*
 * **Day 4:** 통계적 분석 (Correlation, Beta) *(Coming Soon)*
 * **Day 5:** 포트폴리오 최적화 (Efficient Frontier) *(Coming Soon)*
