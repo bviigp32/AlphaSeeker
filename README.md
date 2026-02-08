@@ -36,7 +36,7 @@
 ## 개발 로그 (Development Log)
 
 * **Day 1: 데이터 파이프라인 구축**
-* `yfinance`를 활용한 다중 종목(AAPL, MSFT, ^GSPC 등) 데이터 수집 및 전처리 자동화.
+    * `yfinance`를 활용한 다중 종목(AAPL, MSFT, ^GSPC 등) 데이터 수집 및 전처리 자동화.
 * **Day 2: EDA & 데이터 전처리 (Preprocessing)**
     * `src/eda.py` 작성: 결측치(NaN) 처리 및 데이터 정규화(Forward Fill).
     * **시각화:** 이중축 차트(Dual Axis)를 활용하여 삼성전자 vs S&P500 가격 추세 비교.
