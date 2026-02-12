@@ -4,7 +4,7 @@
 > 시장 수익률(Beta)을 초과하는 나만의 알파(Alpha)를 찾기 위한 **금융 데이터 분석 및 포트폴리오 최적화 프로젝트**입니다.
 > Python을 활용해 KOSPI/NASDAQ 주요 종목의 기술적 지표를 분석하고, 상관관계 분석 및 Efficient Frontier 시뮬레이션을 통해 최적의 투자 비중을 제안합니다.
 
-![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python) ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas) ![Scipy](https://img.shields.io/badge/Scipy-Statistics-8CAAE6?logo=scipy) ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit)
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python) ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas) ![NumPy](https://img.shields.io/badge/NumPy-Computation-013243?logo=numpy) ![Scipy](https://img.shields.io/badge/Scipy-Statistics-8CAAE6?logo=scipy) ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit)
 
 ## 프로젝트 개요 (Overview)
 * **목표:** 주식 시장 데이터(OHLCV)를 수집하여 통계적 기법으로 분석하고, 리스크 대비 수익률을 극대화하는 포트폴리오 구성안 도출.
@@ -22,9 +22,10 @@
 3.  **통계적 분석 (Statistical Analysis):**
     * **상관관계 분석 (Correlation Heatmap):** 자산 간의 움직임 유사도 측정 (분산 투자 효과 검증).
     * **Beta(β) & Alpha(α):** 선형 회귀(Linear Regression)를 통해 시장 민감도(Risk)와 초과 수익률(Return) 산출.
-4.  **포트폴리오 최적화 (Optimization):**
-    * **Monte Carlo Simulation:** 수만 번의 시뮬레이션을 통해 **효율적 투자선(Efficient Frontier)** 도출. *(Day 5 예정)*
-    * **Sharpe Ratio:** 무위험 이자율 대비 초과 수익률이 가장 높은 최적 비중 산출. *(Day 5 예정)*
+4.  **포트폴리오 최적화 (Portfolio Optimization):**
+    * **Monte Carlo Simulation:** 10,000번의 시뮬레이션을 통해 다양한 자산 배분 시나리오 테스트.
+    * **Efficient Frontier (효율적 투자선):** 동일한 리스크 하에서 기대 수익률이 가장 높은 포트폴리오 집합 도출.
+    * **Sharpe Ratio (샤프 지수):** 무위험 이자율(Risk-Free Rate, 3.5%) 대비 초과 수익률이 최대화되는 최적 비중(Max Sharpe Portfolio) 산출.
 
 ## 개발 로그 (Development Log)
 * **Day 1: 데이터 파이프라인 구축** (`src/data_loader.py`)
@@ -37,7 +38,9 @@
 * **Day 4: 통계적 분석 (Beta/Alpha)** (`src/statistical_analysis.py`)
     * `scipy.stats` 선형 회귀(Linear Regression)를 활용하여 개별 종목의 Beta 계수 산출.
     * 산점도(Scatter Plot)와 회귀선을 통한 시장 민감도 시각화.
-* **Day 5:** 포트폴리오 최적화 (Efficient Frontier) *(Coming Soon)*
+* **Day 5: 포트폴리오 최적화** (`src/portfolio_optimization.py`)
+    * `NumPy` 기반의 행렬 연산으로 포트폴리오 수익률 및 공분산(Risk) 계산.
+    * 몬테카를로 시뮬레이션을 수행하여 Max Sharpe 및 Min Volatility 포트폴리오 도출.
 * **Day 6:** 대시보드 구축 (Streamlit) *(Coming Soon)*
 * **Day 7:** 최종 리포팅 및 배포 *(Coming Soon)*
 
@@ -46,9 +49,9 @@
 | :--- | :--- | :--- |
 | **Language** | Python 3.11 | 데이터 분석 및 로직 구현 |
 | **Data** | **yfinance** | 주가 데이터(OHLCV) 수집 API |
-| **Analysis** | **Pandas, NumPy** | 시계열 데이터 처리 및 수치 연산 |
+| **Analysis** | **Pandas, NumPy** | 시계열 데이터 처리, 행렬 연산, 시뮬레이션 |
 | **Stats** | **Scikit-learn, Scipy** | 선형 회귀(Beta), 최적화(Optimization) |
-| **Visualization** | Matplotlib, Seaborn | 정적 차트 및 히트맵 시각화 |
+| **Visualization** | Matplotlib, Seaborn | 정적 차트 및 히트맵, 효율적 투자선 시각화 |
 | **Dashboard** | Streamlit | 인터랙티브 웹 대시보드 구현 |
 
 ## 실행 방법 (How to Run)
@@ -64,9 +67,10 @@ pip install -r requirements.txt
 python src/data_loader.py
 
 # 4. 분석 스크립트 실행
-python src/eda.py                 # 탐색적 데이터 분석 (상관관계)
-python src/technical_analysis.py  # 기술적 지표 (RSI, 볼린저밴드)
-python src/statistical_analysis.py # 통계 분석 (베타, 알파)
+python src/eda.py                 # 탐색적 데이터 분석
+python src/technical_analysis.py  # 기술적 지표
+python src/statistical_analysis.py # 통계 분석 (베타)
+python src/portfolio_optimization.py # 포트폴리오 최적화 (몬테카를로)
 
 ```
 
