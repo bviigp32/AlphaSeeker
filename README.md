@@ -41,7 +41,9 @@
 * **Day 5: 포트폴리오 최적화** (`src/portfolio_optimization.py`)
     * `NumPy` 기반의 행렬 연산으로 포트폴리오 수익률 및 공분산(Risk) 계산.
     * 몬테카를로 시뮬레이션을 수행하여 Max Sharpe 및 Min Volatility 포트폴리오 도출.
-* **Day 6:** 대시보드 구축 (Streamlit) *(Coming Soon)*
+* **Day 6: 인터랙티브 웹 대시보드 구축** (`app.py`)
+    * `Streamlit`을 활용하여 분석 결과를 시각적으로 제공하는 웹 애플리케이션 개발.
+    * 사용자가 직접 비교할 종목을 선택하고 실시간으로 주가 차트와 상관관계 히트맵을 확인할 수 있는 사용자 화면 구현.
 * **Day 7:** 최종 리포팅 및 배포 *(Coming Soon)*
 
 ## 기술 스택 (Tech Stack)
@@ -66,7 +68,10 @@ pip install -r requirements.txt
 # 3. 데이터 수집 (최초 1회)
 python src/data_loader.py
 
-# 4. 분석 스크립트 실행
+# 4. 웹 대시보드 실행 (가장 추천하는 방법)
+streamlit run app.py
+
+# 5. 개별 분석 스크립트 실행 (선택사항)
 python src/eda.py                 # 탐색적 데이터 분석
 python src/technical_analysis.py  # 기술적 지표
 python src/statistical_analysis.py # 통계 분석 (베타)
