@@ -31,7 +31,7 @@
 * **Day 4: 통계적 분석** (`src/statistical_analysis.py`) - Beta/Alpha 산출
 * **Day 5: 포트폴리오 최적화** (`src/portfolio_optimization.py`) - 몬테카를로 시뮬레이션
 * **Day 6: 대시보드 프로토타입** (`app.py`) - Streamlit 기본 레이아웃 및 차트 연동
-* **Day 7: 통합 웹 서비스 완성** (`app.py`) - 탭(Tab) 기반 UI 구성 및 동적 포트폴리오 최적화 시뮬레이터 연동 완료 🎉
+* **Day 7: 통합 웹 서비스 완성** (`app.py`) - 탭(Tab) 기반 UI 구성 및 동적 포트폴리오 최적화 시뮬레이터 연동 완료 
 
 ## 기술 스택 (Tech Stack)
 | Category | Technology | Usage |
@@ -55,7 +55,7 @@ pip install -r requirements.txt
 # 3. 데이터 수집 (최초 1회)
 python src/data_loader.py
 
-# 4. 알파 시커 대시보드 실행 🚀
+# 4. 알파 시커 대시보드 실행 
 streamlit run app.py
 
 ```
